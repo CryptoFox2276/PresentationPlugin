@@ -1,0 +1,17 @@
+{
+  "name": "presentationplugin",
+  "version": "0.0.1",
+  "description": "This is customized cordova plugin for secondary screen presentation",
+  "cordova": {
+    "id": "presentationplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "jstopcoder",
+  "license": "ISC"
+}

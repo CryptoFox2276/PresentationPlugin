@@ -75,10 +75,10 @@
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-       <source-file src="src/android/CDVPresentationPlugin.java" target-dir="src/presentationplugin" />
-	   <source-file src="src/android/PresentationSession.java" target-dir="src/presentationplugin" />
-	   <source-file src="src/android/NavigatorPresentationJS.java" target-dir="src/presentationplugin" />
-	   <source-file src="src/android/SecondScreenPresentation.java" target-dir="src/presentationplugin" />
+       <source-file src="src/android/CDVPresentationPlugin.java" target-dir="src/presentationplugin/PresentationPlugin" />
+	   <source-file src="src/android/PresentationSession.java" target-dir="src/presentationplugin/PresentationPlugin" />
+	   <source-file src="src/android/NavigatorPresentationJS.java" target-dir="src/presentationplugin/PresentationPlugin" />
+	   <source-file src="src/android/SecondScreenPresentation.java" target-dir="src/presentationplugin/PresentationPlugin" />
      </platform>
 
 </plugin>
