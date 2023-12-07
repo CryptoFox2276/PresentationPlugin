@@ -22,24 +22,24 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="presentation"
+    id="presentationplugin"
     version="0.0.1">
-    <name>Presentation</name>
+    <name>PresentationPlugin</name>
     <description>Cordova Presentation API Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,presentation,presentation api,second screen,multi-screen,webscreens</keywords>
-    <repo>https://github.com/JSTop1Coder/cordova-plugin-presentation.git</repo>
+    <repo>https://github.com/JSTop1Coder/PresentationPlugin.git</repo>
 
-    <js-module src="www/presentation.js" name="presentation">
-        <clobbers target="navigator.presentation" />
+    <js-module src="www/PresentationPlugin.js" name="PresentationPlugin">
+        <clobbers target="navigator.PresentationPlugin" />
     </js-module>
 
-    <asset src="www/presentation" target="presentation" />
+    <asset src="www/PresentationPlugin" target="PresentationPlugin" />
 
      <!-- ios -->
      <platform name="ios">
          <config-file target="config.xml" parent="/*">
-             <feature name="Presentation">
+             <feature name="PresentationPlugin">
                  <param name="ios-package" value="CDVPresentationPlugin" />
              </feature>
          </config-file>
@@ -67,7 +67,7 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Presentation">
+            <feature name="PresentationPlugin">
                 <param name="android-package" value="presentation.CDVPresentationPlugin"/>
             </feature>
         </config-file>
@@ -75,10 +75,10 @@
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
 
-       <source-file src="src/android/CDVPresentationPlugin.java" target-dir="src/presentation" />
-	   <source-file src="src/android/PresentationSession.java" target-dir="src/presentation" />
-	   <source-file src="src/android/NavigatorPresentationJS.java" target-dir="src/presentation" />
-	   <source-file src="src/android/SecondScreenPresentation.java" target-dir="src/presentation" />
+       <source-file src="src/android/CDVPresentationPlugin.java" target-dir="src/presentationplugin" />
+	   <source-file src="src/android/PresentationSession.java" target-dir="src/presentationplugin" />
+	   <source-file src="src/android/NavigatorPresentationJS.java" target-dir="src/presentationplugin" />
+	   <source-file src="src/android/SecondScreenPresentation.java" target-dir="src/presentationplugin" />
      </platform>
 
 </plugin>
