@@ -68,7 +68,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="PresentationPlugin">
-                <param name="android-package" value="presentationplugin.PresentationPlugin.CDVPresentationPlugin"/>
+                <param name="android-package" value="PresentationPlugin.CDVPresentationPlugin"/>
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
