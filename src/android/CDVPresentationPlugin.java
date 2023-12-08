@@ -148,6 +148,7 @@ public class CDVPresentationPlugin extends CordovaPlugin implements DisplayManag
 
 	private boolean sendHtmlContent(JSONArray args, CallbackContext callbackContext) throws JSONException {
 		String param = args.getString(0);
+		JSONObject obj = new JSONObject(param);
 		String data = obj.getString("data");
 		System.out.println("****** CDVPresentationPlugin/sendHtmlContent ******");
 		PresentationSession session = new PresentationSession(getActivity(), data, callbackContext);
