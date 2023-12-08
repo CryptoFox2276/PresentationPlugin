@@ -56,14 +56,14 @@ var exec = function() {
  */
 function NavigatorPresentation() {
     // In case of mirroring, display the following placeholder page
-    var defaultDisplay = makeAbs("presentation/display.html");
+    var defaultDisplay = makeAbs("PresentationPlugin/display.html");
     var c = document.getElementsByTagName("script");
     for (var i = 0; i < c.length; i++) {
         if (c[i] && c[i].src && c[i].src.indexOf("/cordova.js") != -1) {
-            defaultDisplay = c[i].src.replace("/cordova.js", "/presentation/display.html");
+            defaultDisplay = c[i].src.replace("/cordova.js", "/PresentationPlugin/display.html");
         }
     }
-    exec( /*successCallback*/ Function, /*errorCallback*/ Function, "Presentation", "setDefaultDisplay", [defaultDisplay]);
+    exec( /*successCallback*/ Function, /*errorCallback*/ Function, "PresentationPlugin", "setDefaultDisplay", [defaultDisplay]);
 }
 
 Object.defineProperty(NavigatorPresentation.prototype, "requestSession", {
@@ -87,10 +87,10 @@ Object.defineProperty(NavigatorPresentation.prototype, "onavailablechange", {
                         onavailablechange(evt);
                     }
                 }
-                exec(scb, function() {}, "Presentation", "addWatchAvailableChange", []);
+                exec(scb, function() {}, "PresentationPlugin", "addWatchAvailableChange", []);
             } else {
                 //stop the service serving screen states
-                exec(function() {}, function() {}, "Presentation", "clearWatchAvailableChange", []);
+                exec(function() {}, function() {}, "PresentationPlugin", "clearWatchAvailableChange", []);
             }
         };
     }
@@ -137,7 +137,7 @@ var navigatorPresentationRequestSession = function(url) {
     var errorCallback = function() {
 
     };
-    exec(successCallback, errorCallback, "Presentation", "requestSession", [makeAbs(url)]);
+    exec(successCallback, errorCallback, "PresentationPlugin", "requestSession", [makeAbs(url)]);
     return new PresentationSession(delSession);
 };
 
@@ -154,7 +154,7 @@ var navigatorPresentationSendHtmlContent = function(data) {
     var errorCallback = function(err) {
         console.log("navigatorPresentationSendHtmlContent error result...", err)
     };
-    exec(successCallback, errorCallback, "Presentation", "sendHtmlContent", [data]);
+    exec(successCallback, errorCallback, "PresentationPlugin", "sendHtmlContent", [data]);
 };
 
 
@@ -262,13 +262,13 @@ var PresentationSession = function(delSession) {
 
 var presentationSessionPostMessage = function(ds) {
     return function(message) {
-        exec( /*successCallback*/ Function, /*errorCallback*/ Function, "Presentation", "presentationSessionPostMessage", [ds._id, message]);
+        exec( /*successCallback*/ Function, /*errorCallback*/ Function, "PresentationPlugin", "presentationSessionPostMessage", [ds._id, message]);
     };
 };
 
 var presentationSessionClose = function(ds) {
     return function() {
-        exec( /*successCallback*/ Function, /*errorCallback*/ Function, "Presentation", "presentationSessionClose", [ds._id]);
+        exec( /*successCallback*/ Function, /*errorCallback*/ Function, "PresentationPlugin", "presentationSessionClose", [ds._id]);
     };
 };
 
