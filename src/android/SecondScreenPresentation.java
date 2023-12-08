@@ -155,11 +155,11 @@ public class SecondScreenPresentation extends Presentation {
     	System.out.println("****** SecondScreenPresentation/setSession ******");
 		this.session = session;
 		if (session == null) {
-			loadUrl(getDisplayUrl());
+			// loadUrl(getDisplayUrl());
 			loadData(getDefaultHtmlContent());
 		}
 		else {
-			loadUrl(session.getUrl());
+			// loadUrl(session.getUrl());
 			loadData(session.getHtmlContent());
 		}
 	}
