@@ -59,8 +59,8 @@ public class SecondScreenPresentation extends Presentation {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
     	System.out.println("****** SecondScreenPresentation/onCreate ******");
-		setContentView(getWebView());
-		// loadUrl(getDisplayUrl());
+			setContentView(getWebView());
+			// loadUrl(getDisplayUrl());
     	loadData(getDefaultHtmlContent());
 	}
 	

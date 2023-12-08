@@ -308,6 +308,13 @@ public class CDVPresentationPlugin extends CordovaPlugin implements DisplayManag
 			presentations[counter] = presentation;
 			items[counter++] = presentation.getDisplay().getName();
 		}
+
+		SecondScreenPresentation presentation = presentations[0];
+		session.setPresentation(presentation);
+		getSessions().put(session.getId(), session);
+
+		return;
+
 		builder.setTitle("Select Presentation Display").setItems(items,
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
