@@ -315,26 +315,26 @@ public class CDVPresentationPlugin extends CordovaPlugin implements DisplayManag
 
 		return;
 
-		builder.setTitle("Select Presentation Display").setItems(items,
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						SecondScreenPresentation presentation = presentations[which];
-						session.setPresentation(presentation);
-						getSessions().put(session.getId(), session);
-					}
-				}).setCancelable(false).setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						dialog.cancel();
-					}
-				}).setOnCancelListener(new DialogInterface.OnCancelListener() {
-					@Override
-					public void onCancel(DialogInterface dialog) {
-						session.setState(PresentationSession.DISCONNECTED);
-					}
-				});
-		AlertDialog dialog = builder.create();
-		dialog.show();
+		// builder.setTitle("Select Presentation Display").setItems(items,
+		// 		new DialogInterface.OnClickListener() {
+		// 			public void onClick(DialogInterface dialog, int which) {
+		// 				SecondScreenPresentation presentation = presentations[which];
+		// 				session.setPresentation(presentation);
+		// 				getSessions().put(session.getId(), session);
+		// 			}
+		// 		}).setCancelable(false).setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+		// 			@Override
+		// 			public void onClick(DialogInterface dialog, int which) {
+		// 				dialog.cancel();
+		// 			}
+		// 		}).setOnCancelListener(new DialogInterface.OnCancelListener() {
+		// 			@Override
+		// 			public void onCancel(DialogInterface dialog) {
+		// 				session.setState(PresentationSession.DISCONNECTED);
+		// 			}
+		// 		});
+		// AlertDialog dialog = builder.create();
+		// dialog.show();
 	};
 	
 	@Override
