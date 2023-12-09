@@ -16,7 +16,7 @@
  * AUTHORS: Louay Bassbouss <louay.bassbouss@fokus.fraunhofer.de>
  *          Martin Lasak <martin.lasak@fokus.fraunhofer.de>
  */
-package presentationplugin;
+package presentationplugin.PresentationPlugin;
 
 import java.util.Collection;
 import java.util.HashMap;
