@@ -163,7 +163,7 @@ public class SecondScreenPresentation extends Presentation {
 			"      }\r\n" + //
 			"      slides[slideIndex - 1].style.display = \"block\";\r\n" + //
 			"      dots[slideIndex - 1].className += \" active\";\r\n" + //
-			"      setTimeout(showSlides, 5000);\r\n" + //
+			"      setTimeout(showSlides, 10000);\r\n" + //
 			"    }\r\n" + //
 			"  </script>\r\n" + //
 			"\r\n" + //
