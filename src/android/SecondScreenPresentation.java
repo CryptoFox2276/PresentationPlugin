@@ -335,13 +335,6 @@ public class SecondScreenPresentation extends Presentation {
    * @return the URL of the display html page
    */
   public String getDefaultHtmlContent() {
-	File f = new File(getOuterContext().getFilesDir(), "display.html");
-	if (f.exists()) {
-		try {
-			return FileUtils.readFileToString(f);
-		} catch (IOException e) {
-		}
-	}
     return DEFAULT_DISPLAY_HTML;
   }
 }
