@@ -36,7 +36,32 @@ import android.webkit.WebViewClient;
  */
 public class SecondScreenPresentation extends Presentation {
 	private static String DEFAULT_DISPLAY_URL="about:blank";
-	private static String DEFAULT_DISPLAY_HTML="<html><body><h1>This is a Second Screen Page.</h1></body></html>";
+	private static String DEFAULT_DISPLAY_HTML
+		=	`<!DOCTYPE html>
+				<html>
+					<head>
+					    <style>
+					        body {
+					            background-image: url('https://i.postimg.cc/TYc64cH6/landscape1.jpg');
+					            background-repeat: no-repeat;
+					            background-attachment: fixed;
+					            background-size: cover;
+					        }
+
+					        h1 {
+					            margin: auto;
+					            color: white;
+					            position: absolute;
+					            top: 50%;
+					            width: 100%;
+					            text-align: center;
+					    }
+					    </style>
+					</head>
+					<body>
+					    <h1>Secondary Screen Page</h1>
+					</body>
+				</html>`;
 	private WebView webView;
 	private PresentationSession session;
 	private Activity outerContext;
