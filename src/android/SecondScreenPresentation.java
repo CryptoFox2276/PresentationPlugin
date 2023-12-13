@@ -58,7 +58,6 @@ public class SecondScreenPresentation extends Presentation {
 	 */
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-    	System.out.println("****** SecondScreenPresentation/onCreate ******");
 			setContentView(getWebView());
 			// loadUrl(getDisplayUrl());
     	loadData(getDefaultHtmlContent());
@@ -78,7 +77,6 @@ public class SecondScreenPresentation extends Presentation {
 	 * @return the webview of the presenting page.
 	 */
 	public WebView getWebView() {
-    System.out.println("****** SecondScreenPresentation/getWebView ******");
 		if (webView == null) {
 			webView = new WebView(this.getContext());
 			webView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
@@ -100,7 +98,6 @@ public class SecondScreenPresentation extends Presentation {
 				}
 				@Override
 				public void onPageFinished(WebView view, String url) {
-          			System.out.println("****** SecondScreenPresentation/getWebView/onPageFinished ******");
 					view.loadUrl(NavigatorPresentationJS.RECEIVER);
 					view.loadUrl("javascript:document.dispatchEvent(new Event('deviceready'));");
 					super.onPageFinished(view, url);
@@ -109,7 +106,6 @@ public class SecondScreenPresentation extends Presentation {
 			webView.addJavascriptInterface(new Object(){
 				@JavascriptInterface
 				public void setOnPresent() {
-          			System.out.println("****** SecondScreenPresentation/getWebView/addJavascriptInterface/setOnPresent ******");
 					if(getSession() != null){
 						getSession().getActivity().runOnUiThread(new Runnable() {
 							@Override
@@ -152,7 +148,6 @@ public class SecondScreenPresentation extends Presentation {
 	 * @param session the {@link PresentationSession} to set. if <code>null</code> the default display html page will be displayed instead of the presenting page.
 	 */
 	public void setSession(PresentationSession session) {
-    	System.out.println("****** SecondScreenPresentation/setSession ******");
 		this.session = session;
 		if (session == null) {
 			// loadUrl(getDisplayUrl());
@@ -186,7 +181,6 @@ public class SecondScreenPresentation extends Presentation {
 	}
 
   public void loadData(final String htmlData) {
-    System.out.println("****** SecondScreenPresentation/loadData ******");
     if (getDisplay() != null) {
       getOuterContext().runOnUiThread(new Runnable() {
         @Override
